@@ -4,6 +4,7 @@ const router = require('express').Router();
 const User = require('../models/User.model');
 const UserSession = require('../models/UserSession.model');
 const Group = require('../models/Group.model');
+const ExerciseSession = require('../models/ExerciseSession.model');
 
 
 router.route('/users').get((req,res)=> {
@@ -25,6 +26,16 @@ router.route('/groups').get((req,res)=> {
 });
 
 
+router.route('/delete').get((req,res)=> {
+    ExerciseSession.deleteMany({})
+        .then(() => {
+            res.status(200).json('Deleted');
+        })
+});
+
+
+
+
 
 /*This is an example of function to give data to client (slowly) for example for big operation
 * where we want to inform the client the progress we could use it*/
@@ -34,6 +45,8 @@ router.route('/write').get((req,res)=> {
             res.end();
         });
 });
+
+
 
 async function write(res) {
     res.write("<div>Hello world</div>");
@@ -46,6 +59,7 @@ async function write(res) {
     await sleep(1000);
     res.write("<div>Hello world</div>");
 }
+
 
 
 function sleep(ms) {

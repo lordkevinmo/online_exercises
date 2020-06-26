@@ -306,7 +306,7 @@ function getQuestions(exerciseId,res,exerciseSession,isGenerateNeeded)
 
 function generateQuestions(questions)
 {
-    const Utils = require('./../Utils');
+    const Utils = require('./../../Utils');
 
     let questionsArray = [];
     questions.forEach((question) => {
