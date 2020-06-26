@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const auth = require('../middleware/auth');
+const mongoose = require('mongoose');
 
 const Exercise = require('../models/Exercise.model');
 const Group = require('../models/Group.model');
 const ExerciseSession = require('../models/ExerciseSession.model');
 
-//Get all the question created by the user
+//Get all the exercise created by the user
 router.route('/').get(auth,(req,res)=> {
     const userId = req.cookies['userId'] || req.query.userId;
 
@@ -19,6 +20,102 @@ router.route('/').get(auth,(req,res)=> {
 
 });
 
+//Get all the exercise attributed to one group
+router.route('/group').get(auth,(req,res)=> {
+    const userId = req.cookies['userId'] || req.query.userId;
+    const groupId = req.query.groupId;
+
+    Group.findOne({_id:groupId,admin:userId})
+        .then(group => {
+
+            if(group !== undefined)
+            {
+                const ObjectId = mongoose.Types.ObjectId;
+
+                const ids = group.exercises;
+                const mongoIds = ids.map(id => ObjectId(id));
+
+                Exercise.find({ _id : { $in : mongoIds } })
+                    .then(exercises => {
+                        res.json(exercises)
+                    })
+                    .catch(e => res.status(401).json(e))
+            }
+            else
+                res.status(401).json("Error: You are not allowed to access this data.");
+
+        })
+        .catch(err => {
+            res.status(401).json(err);
+        })
+
+});
+
+//Get all the users results for one specific exercises
+router.route('/results').get(auth,(req,res)=> {
+
+    const userId = req.cookies['userId'] || req.query.userId;
+    const groupId = req.query.groupId;
+    const exerciseId = req.query.exerciseId;
+
+    Group.findOne({_id:groupId,admin:userId})
+        .then(group => {
+
+            if(!group)
+                return res.status(401).json("Error: You are not allowed to access this data");
+
+            const ObjectId = mongoose.Types.ObjectId;
+
+            ExerciseSession.aggregate([
+                {
+                    $match: { groupId: groupId, exerciseId:exerciseId }
+                },
+                {
+                    $addFields: {
+                        userId: { $toObjectId: "$userId" }
+                    }
+                },
+                {
+                    '$lookup': {
+                        'from': "users",
+                        'localField': "userId",
+                        'foreignField': "_id",
+                        'as': "user"
+                    }
+                }
+                ,
+                {
+                    $project: {
+                        questionLogs:1,
+                        submitted:1,
+                        startTime:1,
+                        exerciseId:1,
+                        UserOutput:1,
+                        "user.name":1,
+                        "user.surname":1
+                    }
+                },
+
+            ])
+                .exec((err, result)=>{
+                    if (err) {
+                        res.status(500).json(err);
+                    }
+                    if (result) {
+                        if(result.length===0)
+                            return res.status(400).json("Error: can't found data");
+
+                        res.json(result);
+                    }
+                });
+
+        })
+        .catch(err => {
+            res.status(401).json(err);
+        })
+
+});
+
 //The owner of an exercise can request it directly from its Id
 router.route('/:id').get(auth,(req,res)=> {
     const userId = req.cookies['userId'] || req.query.userId;
@@ -26,14 +123,9 @@ router.route('/:id').get(auth,(req,res)=> {
     Exercise.findOne({_id:req.params.id,owner:userId})
         .then((response) => {
             if(response === null)
-            {
                 res.status(400).json("Cannot access this exercises");
-                return;
-            }
             else
-            {
                 res.json(response);
-            }
         })
         .catch((err) => {
             res.status(500).json("Error: " + err);
@@ -141,7 +233,6 @@ router.route('/attend/update').post(auth,(req,res)=> {
 
 });
 
-
 router.route('/attend/submit').post(auth,(req,res)=> {
 
     const userId = req.cookies['userId'] || req.query.userId;
@@ -170,7 +261,6 @@ router.route('/attend/submit').post(auth,(req,res)=> {
         });
 
 });
-
 
 //Any user can attend to exercise available to group where he is IN (admin or not)
 router.route('/attend').post(auth,(req,res)=> {
@@ -236,7 +326,6 @@ router.route('/attend').post(auth,(req,res)=> {
 //isGenerateNeeded mean that we need to create the inputs/output for each question AND save them into exerciseSession
 function getQuestions(exerciseId,res,exerciseSession,isGenerateNeeded)
 {
-    const mongoose = require('mongoose');
     const ObjectId = mongoose.Types.ObjectId;
 
     Exercise.aggregate([

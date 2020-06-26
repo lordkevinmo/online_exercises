@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d8da224-40cb-44a9-9772-ef193fb90996" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupAdvancedResults.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupResults.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupUserResults.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FEATURES.md" beforeDir="false" afterPath="$PROJECT_DIR$/FEATURES.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/models/Exercise.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/models/Exercise.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/routes/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/debug.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/routes/exercises.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/exercises.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupExercises.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupExercises.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupMembers.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupMembers.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupSection.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupSection.component.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,29 +27,57 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/components/AttendComponents/Attendance.component.js">
+        <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupResults.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
+            <state relative-caret-position="-63">
+              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/src/routes/exercises.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupSection.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="964">
-              <caret line="310" column="28" lean-forward="true" selection-start-line="310" selection-start-column="28" selection-end-line="310" selection-end-column="28" />
+            <state relative-caret-position="420">
+              <caret line="82" column="90" selection-start-line="82" selection-start-column="90" selection-end-line="82" selection-end-column="90" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/models/ExerciseSession.model.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupAdvancedResults.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1365">
+              <caret line="65" column="53" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/connection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="52" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupUserResults.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -53,6 +90,10 @@
       <find>addCourse</find>
       <find>Course</find>
       <find>util</find>
+      <find>findby</find>
+      <find>Object</find>
+      <find>mongoose</find>
+      <find>ObjectId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -81,11 +122,16 @@
         <option value="$PROJECT_DIR$/ui/src/components/ExercisesComponents/CreateExercise.component.js" />
         <option value="$PROJECT_DIR$/ui/src/components/ExercisesComponents/EditExercises.component.js" />
         <option value="$PROJECT_DIR$/TODO.md" />
-        <option value="$PROJECT_DIR$/FEATURES.md" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/ui/src/components/AttendComponents/Attendance.component.js" />
-        <option value="$PROJECT_DIR$/api/src/routes/exercises.js" />
         <option value="$PROJECT_DIR$/api/src/routes/debug.js" />
+        <option value="$PROJECT_DIR$/api/src/models/Exercise.model.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/FEATURES.md" />
+        <option value="$PROJECT_DIR$/api/src/routes/exercises.js" />
+        <option value="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupResults.component.js" />
+        <option value="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupSection.component.js" />
+        <option value="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupAdvancedResults.component.js" />
+        <option value="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupUserResults.component.js" />
       </list>
     </option>
   </component>
@@ -131,9 +177,37 @@
             <path>
               <item name="online_exercises_docker" type="b2602c69:ProjectViewProjectNode" />
               <item name="online_exercises_docker" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online_exercises_docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online_exercises_docker" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online_exercises_docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online_exercises_docker" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online_exercises_docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online_exercises_docker" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="GroupsComponents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online_exercises_docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online_exercises_docker" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="GroupsComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="GroupPanels" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -145,19 +219,21 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\axels\OneDrive - Universite De Technologie De Belfort-Montbeliard\Private\WebStorm\online_exercises_docker\ui\src\components\GroupsComponents\GroupPanels" />
+      <recent name="C:\Users\axels\OneDrive - Universite De Technologie De Belfort-Montbeliard\Private\WebStorm\react-express-mongo-app\api" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\axels\OneDrive - Universite De Technologie De Belfort-Montbeliard\Private\WebStorm\online_exercises_docker\ui\src\components\GroupsComponents\GroupPanels" />
       <recent name="C:\Users\axels\OneDrive - Universite De Technologie De Belfort-Montbeliard\Private\WebStorm\react-express-mongo-app\api" />
       <recent name="C:\Users\axels\OneDrive - Universite De Technologie De Belfort-Montbeliard\Private\WebStorm\react-express-mongo-app" />
       <recent name="C:\Users\axels\OneDrive - Universite De Technologie De Belfort-Montbeliard\Private\WebStorm\react-express-mongo-app\api\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\axels\OneDrive - Universite De Technologie De Belfort-Montbeliard\Private\WebStorm\react-express-mongo-app\api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -187,12 +263,12 @@
       <workItem from="1593089947679" duration="599000" />
       <workItem from="1593090564858" duration="4419000" />
       <workItem from="1593170937823" duration="8745000" />
-      <workItem from="1593184137747" duration="3103000" />
+      <workItem from="1593184137747" duration="17249000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19369000" />
+    <option name="totallyTimeSpent" value="33515000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -205,9 +281,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14541623" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18967333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -219,7 +294,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49894625" weight="0.45" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49894625" visible="true" weight="0.45" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50105375" side_tool="true" weight="0.45" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -230,12 +305,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/src/models/Exercise.model.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/models/Group.model.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/src/models/Question.model.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -253,9 +322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/routes/groups.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/wait-for-it.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -268,9 +334,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/logo.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Utils.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/config-overrides.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -318,13 +381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="114" column="3" lean-forward="true" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -414,33 +470,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/README.md" />
-    <entry file="file://$PROJECT_DIR$/api/src/connection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FEATURES.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1390">
-            <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="525">
-            <caret line="25" selection-start-line="25" selection-end-line="25" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/components/ExercisesComponents/EditExercises.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -491,7 +520,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/components/AttendComponents/Attendance.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
+        <state relative-caret-position="2163">
           <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -499,20 +528,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/models/ExerciseSession.model.js">
+    <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupMembers.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="51" column="92" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/CreateGroup.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="102" column="15" lean-forward="true" selection-start-line="92" selection-start-column="8" selection-end-line="102" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/routes/groups.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/routes/debug.js">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="252">
+            <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/models/Group.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="21" />
+        <state relative-caret-position="147">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FEATURES.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="315">
+            <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="114" column="3" lean-forward="true" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Utils.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/models/ExerciseSession.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/src/routes/exercises.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="964">
-          <caret line="310" column="28" lean-forward="true" selection-start-line="310" selection-start-column="28" selection-end-line="310" selection-end-column="28" />
+        <state relative-caret-position="399">
+          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="e#342#637#0" />
+            <element signature="e#771#1601#0" />
+            <element signature="e#1702#2017#0" />
+            <element signature="e#1712#2119#0" />
+            <element signature="e#2214#2733#0" />
+            <element signature="e#2890#3285#0" />
+            <element signature="e#3406#4455#0" />
+            <element signature="e#4603#5197#0" />
+            <element signature="e#5255#6026#0" />
+            <element signature="e#6160#8622#0" />
+            <element signature="n#!!block;n#getQuestions#0" />
+            <element signature="n#!!block;n#generateQuestions#0" />
+            <element signature="n#!!block;n#extractReleventInformationQuestion#0" />
+            <element signature="n#!!block;n#verifyUserOutput#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/routes/debug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupsList.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/models/Exercise.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupResults.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupAdvancedResults.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="65" column="53" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupSection.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="82" column="90" selection-start-line="82" selection-start-column="90" selection-end-line="82" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/GroupsComponents/GroupPanels/GroupUserResults.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
         </state>
       </provider>
     </entry>

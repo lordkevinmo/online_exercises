@@ -3,6 +3,7 @@ const router = require('express').Router();
 /*Models*/
 const User = require('../models/User.model');
 const UserSession = require('../models/UserSession.model');
+const Exercise = require('../models/Exercise.model');
 const Group = require('../models/Group.model');
 const ExerciseSession = require('../models/ExerciseSession.model');
 
@@ -25,7 +26,6 @@ router.route('/groups').get((req,res)=> {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-
 router.route('/delete').get((req,res)=> {
     ExerciseSession.deleteMany({})
         .then(() => {
@@ -33,7 +33,11 @@ router.route('/delete').get((req,res)=> {
         })
 });
 
-
+router.route('/exercises').get((req,res)=> {
+    Exercise.find()
+        .then(sessions => res.json(sessions))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
 
 
 

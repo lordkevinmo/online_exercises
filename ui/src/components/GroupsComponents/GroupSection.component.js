@@ -2,9 +2,10 @@ import React, {Component} from "react";
 import axios from 'axios';
 import { Card , Breadcrumb,Button,Nav} from 'react-bootstrap';
 import Cookie from "js-cookie"
-import GroupMembers from "./GroupMembers.component";
-import GroupExercises from "./GroupExercises.component";
-
+import GroupMembers from "./GroupPanels/GroupMembers.component";
+import GroupExercises from "./GroupPanels/GroupExercises.component";
+import GroupResults from "./GroupPanels/GroupResults.component";
+import GroupAdvancedResults from "./GroupPanels/GroupAdvancedResults.component";
 
 
 const cardStyle = {
@@ -16,6 +17,7 @@ export default class GroupSection extends Component {
         super(props);
 
         this.onNavUpdate = this.onNavUpdate.bind(this);
+        this.displayExerciseResults = this.displayExerciseResults.bind(this);
 
         this.state = {
             name: this.props.params,
@@ -33,35 +35,54 @@ export default class GroupSection extends Component {
     {
         console.log(index);
 
+        switch (this.state.navigation[index].name) {
+            case "Exercises":
+                this.setState({
+                    navPos: index,
+                    body: <Card.Body><GroupExercises exercises={this.state.group.exercises} groupId={this.state.group._id}/></Card.Body>
+                });
+                break;
 
-        if(this.state.navigation[index].name==='Members')
-        {
-            this.setState({
-                navPos: index,
-                body: <Card.Body><GroupMembers groupId={this.state.group._id}/></Card.Body>
-            });
-        }
-        else
-        {
-            this.setState({
-                navPos: index,
-                body: <Card.Body><GroupExercises exercises={this.state.group.exercises} groupId={this.state.group._id}/></Card.Body>
-            });
-        }
+            case "Members":
+                this.setState({
+                    navPos: index,
+                    body: <Card.Body><GroupMembers groupId={this.state.group._id}/></Card.Body>
+                });
+                break;
 
-        /*this.setState({navPos:index,
-            body:
-                <Card.Body>
-                    <Card.Title>{this.state.navigation[index].name}</Card.Title>
-                    <Card.Text>
-                        With supporting text below as a natural lead-in to additional content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>});*/
+            case "Results":
+                this.setState({
+                    navPos: index,
+                    body: <Card.Body><GroupResults groupId={this.state.group._id} displayExerciseResults={(exercise) => this.displayExerciseResults(exercise)}/></Card.Body>
+                });
+                break;
+
+            case "Settings":
+                this.setState({
+                    navPos: index,
+                    body: <Card.Body>Settings</Card.Body>
+                });
+                break;
+
+            default:
+                this.setState({
+                    navPos: index,
+                    body: <Card.Body>Error nothing selected</Card.Body>
+                });
+                break;
+
+        }
 
     }
 
-
+    //Communication between the tab Results and the section component.
+    displayExerciseResults(exercise)
+    {
+        this.setState({
+            navPos: -1,
+            body: <Card.Body><GroupAdvancedResults groupId={this.state.group._id} exercise={exercise}/></Card.Body>
+        });
+    }
 
     //Right before anything load the page this is called
     componentDidMount() {
@@ -81,6 +102,7 @@ export default class GroupSection extends Component {
                 {
                     this.state.navigation.push({url:"#Members",name:"Members"});
                     this.state.navigation.push({url:"#Settings",name:"Settings"});
+                    this.state.navigation.push({url:"#Results",name:"Results"});
                 }
 
                 this.setState({

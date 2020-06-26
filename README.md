@@ -7,7 +7,7 @@ This project is using [Docker-Compose](https://docs.docker.com/compose/) it allo
 ### Instruction
 
 ```
-git clone [REPOSITORY LINK]
+git clone https://github.com/axel0070/online_exercises
 docker-compose up --build
 ```
 

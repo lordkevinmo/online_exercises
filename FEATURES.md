@@ -45,6 +45,8 @@ An exercice is composed of one or many questions (different type possible)
 - [x] When a question is edited, all exerciseSession which contain this question AND are not finished will be removed.
 - [x] Each time a user finish one of the many questions in an exercise it is saved in his userSession (server) and can be recover if he login/logout somewhere else.
 - [x] Owner can add question to an exercise (TODO: CHECK THE QUESTION ADDED BELONG TO THE OWNER (server: /update/:id ) )
+- [ ] Cannot assign an exercise with 0 question to a group.
+
 
 # Type of question
 
