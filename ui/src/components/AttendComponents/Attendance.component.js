@@ -40,7 +40,7 @@ export default class Attendance extends Component {
             groupId:this.state.groupId,
         };
         //Recover current session. If not the server will create one
-        axios.post(process.env.REACT_APP_SERVER_URL + '/exercises/attend?token=' + Cookie.get('token') + "&userId="+Cookie.get('userId'),body)
+        axios.post(process.env.REACT_APP_SERVER_URL + 'exercises/attend?token=' + Cookie.get('token') + "&userId="+Cookie.get('userId'),body)
             .then(res => {
 
                 if(res.data.error)
@@ -101,7 +101,7 @@ export default class Attendance extends Component {
             groupId:this.state.groupId,
         };
 
-        axios.post(process.env.REACT_APP_SERVER_URL + '/exercises/attend/update?token=' + Cookie.get('token') + "&userId="+Cookie.get('userId'),body)
+        axios.post(process.env.REACT_APP_SERVER_URL + 'exercises/attend/update?token=' + Cookie.get('token') + "&userId="+Cookie.get('userId'),body)
             .then((res) => {
                 console.log(res.data);
             })
