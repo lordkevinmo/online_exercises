@@ -64,8 +64,6 @@ router.route('/results').get(auth,(req,res)=> {
             if(!group)
                 return res.status(401).json("Error: You are not allowed to access this data");
 
-            const ObjectId = mongoose.Types.ObjectId;
-
             ExerciseSession.aggregate([
                 {
                     $match: { groupId: groupId, exerciseId:exerciseId }
@@ -85,6 +83,15 @@ router.route('/results').get(auth,(req,res)=> {
                 }
                 ,
                 {
+                    '$lookup': {
+                        'from': "questions",
+                        'localField': "questionLogs.questionId",
+                        'foreignField': "_id",
+                        'as': "questions"
+                    }
+                }
+                ,
+                {
                     $project: {
                         questionLogs:1,
                         submitted:1,
@@ -92,7 +99,9 @@ router.route('/results').get(auth,(req,res)=> {
                         exerciseId:1,
                         UserOutput:1,
                         "user.name":1,
-                        "user.surname":1
+                        "user.surname":1,
+                        "questions":1,
+                        "results":1
                     }
                 },
 
@@ -253,7 +262,17 @@ router.route('/attend/submit').post(auth,(req,res)=> {
             else
             {
                 console.log(out);
-                res.json(verifyUserOutput(out));
+
+                const verification = verifyUserOutput(out);
+
+                ExerciseSession.findOneAndUpdate({_id:exerciseSessionID},{results:verification.details})
+                    .then((logs) => {
+                        res.json(verification);
+                    })
+                    .catch(e => {
+                        res.json('Error: Problem during saving results ' + e);
+                    });
+
             }
         })
         .catch((err) => {
@@ -371,8 +390,13 @@ function getQuestions(exerciseId,res,exerciseSession,isGenerateNeeded)
                     {
                         ExerciseSession.findByIdAndUpdate(
                             exerciseSession._id,
-                            {questionLogs:generateQuestions(result[0].questions)},
-                            {projection:{'questionLogs.output':0,'questionLogs.logs':0} ,new:true}
+                            {
+                                questionLogs:generateQuestions(result[0].questions)
+                            },
+                            {
+                                projection:{'questionLogs.output':0,'questionLogs.logs':0},
+                                new:true
+                            }
                             )
                             .then((session) => {
 
@@ -399,7 +423,9 @@ function generateQuestions(questions)
 
     let questionsArray = [];
     questions.forEach((question) => {
-        questionsArray.push(Utils.execute(question.Inputs,question.Function,false)) //TODO: isMathIncluded
+        let logs = Utils.execute(question.Inputs,question.Function,false);
+        logs.questionId = question._id;
+        questionsArray.push(logs) //TODO: isMathIncluded
     });
     return questionsArray;
 }
@@ -427,12 +453,14 @@ function verifyUserOutput(exerciseSession)
     exerciseSession.questionLogs.forEach((item,index) => {
         if(item.output + '' ===  UserOutput[index] + '') //We convert into string to avoid bugs of comparing string with number
         {
-            results.push({correct:true});
+            results.push(true);
             points++;
         }
         else
-            results.push({correct:false,expected:item.output + '',given:UserOutput[index] + ''});
+            results.push(false);
     });
+
     return {details:results,points:points};
+
 }
 module.exports = router;

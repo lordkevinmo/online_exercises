@@ -9,6 +9,7 @@ const ExerciseSessionSchema = new Schema({
         exerciseId: {type: String, required:true},
         questionLogs: {type: Array}, //Inputs / outputs
         UserOutput: {type: Array,default: undefined},
+        results: {type: Array},
         submitted:{type: Boolean, default: false},
 });
 

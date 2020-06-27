@@ -48,6 +48,7 @@ export default class GroupAdvancedResults extends Component {
 
     setUserDetail(index)
     {
+        console.log("Changing to user at index " + index);
         this.setState({
             rightPage: <GroupUserResults userSession={this.state.userSessions[index]} exerciseId={this.state.exercise._id} groupId={this.state.groupId}/>
         })
@@ -63,7 +64,7 @@ export default class GroupAdvancedResults extends Component {
                             <ListGroup variant="flush">
                                 {this.state.userSessions.map((item,i) => {
                                     return <ListGroup.Item key={i}>
-                                        <a href={"#"} onClick={() => this.setUserDetail(i)}>{item.user[0].name} {item.user[0].surname}</a>
+                                        <a href={"#" + i} onClick={() => this.setUserDetail(i)}>{item.user[0].name} {item.user[0].surname}</a>
                                     </ListGroup.Item>
                                 })}
                             </ListGroup>
