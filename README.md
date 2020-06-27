@@ -1,10 +1,12 @@
 # Description
 
-This project is using [Docker-Compose](https://docs.docker.com/compose/) it allows us to run multi-container Docker application. In this repository the backend, frontend and the database will run in different containers.
+The aim of this project is to offer a solution for teachers and student to have safer exercises online. The solution we are offering is for mathematical exercises (or exercises where the answer can be computed). For a same exercise all the student will get different input value, and the right answer will be automatically computed in the background, then compare to the user result, everything is then automatic and safe.
 
 # Installation
 
 ### Instruction
+
+This project is using [Docker-Compose](https://docs.docker.com/compose/) it allows us to run multi-container Docker application. In this repository the backend, frontend and the database will run in different containers.
 
 ```
 git clone https://github.com/axel0070/online_exercises
