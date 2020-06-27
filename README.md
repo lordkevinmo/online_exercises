@@ -24,7 +24,7 @@ In the `docker-compose` file, we are creating a container for a mongodb. Therefo
 If you want to setup your own database for the backend, first you need to edit the docker-compose file and remove the mongo service and the dependency on it. Then you will need to edit the file located in `./api/src/connection.js` and change the connection URL.
 
 # Features
-You can see all of the feature and coming functionality in the [FEATURES]() file.
+You can see all of the feature and coming functionality in the [FEATURES](https://github.com/axel0070/online_exercises/blob/master/FEATURES.md) file.
 
 # License
 Online Exercise is GNU AGPLv3 licensed.
