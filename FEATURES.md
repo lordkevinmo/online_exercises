@@ -3,8 +3,8 @@
 #### General
 - [x] Users can create account and group(s)
 - [x] Users can be admin and members in differents groups
-- [x] We can have more than one admin in a group (which mean more than one person can create/correct/delete exercices)
-- [ ] Make a calendar with a list of coming exercices
+- [x] We can have more than one admin in a group (which mean more than one person can create/correct/delete exercises)
+- [ ] Make a calendar with a list of coming exercises
 - [ ] Templates for each type of question should be available to help people understand HOW to use them
 - [ ] Make a better nomenclature
 	- [ ] Consistent naming of variables
@@ -16,22 +16,23 @@
 #### Creator of a group
 - [x] They can accept/refuse user
 - [x] They can copy an invitation link for groups
-- [x] They can create exercices
+- [x] They can create exercises
+- [x] They can see the results of any exercises assign to a group per user per question
 - [ ] They can change settings of the group
 - [x] They can assign an exercise to a group
 	- [ ] Check no duplicate exercise in a group
 
 #### User
 - [x] User can join group(s)
-- [x] User can see exercices in the group
-- [ ] User can do exercices
+- [x] User can see exercises in the group
+- [x] User can do exercises
 - [x] User can see all the groups(s) they are inside
 - [ ] User can see their marks
 - [ ] User can report a questions/ask for help maybe
-- [ ] User can access hystory (review questions)
+- [ ] User can access history (review questions)
 
 # Exercise
-An exercice is composed of one or many questions (different type possible)
+An exercise is composed of one or many questions (different type possible)
 
 - [ ] They can define a timelimit
 - [ ] They can define a date limit (day/hours/mins/seconds)
@@ -78,14 +79,14 @@ Finally the server will run the script of the creator to check if the user answs
 - [x] Creator can name and write a description about the question.
 - [ ] Creator can delete a question (safely => check it is not used in any exercise)
 
-- [ ] They can allow user to view HOW the value has been computed (when exercices finish and time over for all user)
+- [ ] They can allow user to view HOW the value has been computed (when exercises finish and time over for all user)
 - [ ] Creator can put tags to classify their questions
 
 
 #### Instruction editor
 The creator can write instruction 
 
-- [x] Creator can mention the name of the inputs, in the final exercice, the mention will be replace by the value. Trigger: '@' [draft-js-mention-plugin](https://www.draft-js-plugins.com/plugin/mention)
+- [x] Creator can mention the name of the inputs, in the final exercise, the mention will be replace by the value. Trigger: '@' [draft-js-mention-plugin](https://www.draft-js-plugins.com/plugin/mention)
 - [x] Creator can write mathematical expression using [draft-js-mathjax-plugin](https://github.com/efloti/draft-js-mathjax-plugin)
 	- [x] Fix `store.completion is not a function` issue. Using [fixed-draft-js-mathjax-plugin] (https://github.com/axel0070/fixed-draft-js-mathjax-plugin)
 	- [ ] Fix readOnly ignored by draft-js-mathjax plugin
