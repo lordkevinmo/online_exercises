@@ -13,7 +13,7 @@ git clone https://github.com/axel0070/online_exercises
 docker-compose up --build
 ```
 
-Then open [localhost](http://localhost/)
+In our case the FrontEnd is calling the server on the address [localhost:8080](http://localhost:8080/) if you are using a VPS or something where the address of the server is **not** this one, you need to edit the file [./ui/.env](https://github.com/axel0070/online_exercises/blob/master/ui/.env) and replace [localhost:8080](http://localhost:8080/) by the server address.
 
 ### Database
 

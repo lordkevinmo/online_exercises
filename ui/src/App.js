@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/navbar.component";
 import Login from "./components/Login.component";
 import SignUp from "./components/SignUp.component";
+import Home from "./components/Home.component";
 
 //Group
 import GroupsList from "./components/GroupsComponents/GroupsList.component";
@@ -42,6 +43,7 @@ function App() {
           <div className="container" style={containerStyle}>
             <Navigation />
             <br/>
+              <Route exact path="/" component={Home}/>
             <Route path="/login" component={Login}/>
             <Route path="/Signup" component={SignUp}/>
 

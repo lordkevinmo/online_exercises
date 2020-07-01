@@ -8,6 +8,15 @@ import EditInstruction from "./EditInstruction.component";
 import GenerateInstructionComponent from "../AttendComponents/GenerateInstruction.component";
 
 
+const defaultStart = `/* 
+   The returned object by the main function will be the expected
+   element the user should input following the instruction
+ */
+
+function main(input)
+{ 
+`;
+
 const defaultCode = `/* 
    The returned object by the main function will be the expected
    element the user should input following the instruction
@@ -29,8 +38,10 @@ export default class CodeEditor extends React.Component {
     constructor(prop) {
         super(prop);
 
+        //JS Editor functions
         this.onChange = this.onChange.bind(this);
         this.editorDidMount = this.editorDidMount.bind(this);
+        this.setInputsInJSEditor = this.setInputsInJSEditor.bind(this);
 
         //Modal functions
         this.setModalDemoShow = this.setModalDemoShow.bind(this);
@@ -56,6 +67,7 @@ export default class CodeEditor extends React.Component {
             instructionHTML:'',
             //Editor
             code: defaultCode,
+            isCodeEdited:false,
             theme: "vs-light",
             editor:undefined,
             logs: "",
@@ -107,9 +119,11 @@ export default class CodeEditor extends React.Component {
             })
     }
 
+    //Each time the user is changing something in the JS Editor this function is called.
     onChange (newValue) {
+        console.log("isCodeEdited: " + newValue !== defaultCode);
         //console.log("onChange", newValue); // eslint-disable-line no-console
-        this.setState({code:newValue});
+        this.setState({code:newValue,isCodeEdited: (newValue !== defaultCode) });
     };
 
     editorDidMount (editor) {
@@ -147,12 +161,39 @@ export default class CodeEditor extends React.Component {
             .catch((err) => alert('Error: ' + err));
     };
 
+    //The component where the user is adding/removing the inputs is calling this to notify change
     SetInputsEditor(inputs)
     {
         this.setState({inputs:inputs});
+
+        //Update the editor with the inputs if the user hasn't type any code in it
+        if(!this.state.isCodeEdited)
+            this.setInputsInJSEditor();
+
+        //Send the inputs to the instruction component
         if(this.state.instructionRef.current)
             this.state.instructionRef.current.setInputs(inputs);
     }
+
+
+    setInputsInJSEditor()
+    {
+        let code = defaultStart;
+
+        if(!this.state.inputs)
+            return;
+
+        this.state.inputs.forEach((item,i) => {
+            code+=" const " + item.name + " = input["+i+"]; \n"
+        });
+
+        code+=" return null;\n}";
+
+        this.setState({
+            code:code
+        })
+    }
+
 
     onSave(callback)
     {
@@ -272,7 +313,7 @@ export default class CodeEditor extends React.Component {
                         {this.state.name}
                     </Breadcrumb.Item>
                 </Breadcrumb>
-                <h3>Question id: {this.state.id}</h3>
+                <h3>Question : {this.state.name}</h3>
 
                 <div style={{marginTop:"20px",marginBottom:"50px"}}>
                     {this.state.instructionHTML}
@@ -294,6 +335,9 @@ export default class CodeEditor extends React.Component {
                                       editorDidMount={this.editorDidMount}
                                       theme={theme}
                         />
+                        <div style={{textAlign:"end",margin:"10px"}}>
+                            <Button variant="danger" onClick={this.setInputsInJSEditor}>Reset</Button>
+                        </div>
                         <div style={{textAlign:"end",margin:"10px"}}>
                             <Button variant="success" onClick={this.run}>Run</Button>
                         </div>

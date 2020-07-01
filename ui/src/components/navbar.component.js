@@ -16,6 +16,7 @@ export default class Navigation extends Component {
 
         this.state = {
             isLogin: false,
+            navs: [],
             buttons: ""
         };
 
@@ -28,19 +29,23 @@ export default class Navigation extends Component {
             this.setState( {buttons: <div>
                     <Button variant="success" style={btnStyle} href="/login">Login</Button>
                     <Button variant="outline-success" style={btnStyle} href="/signup">Sign up</Button>
-                </div>});
+                </div>,
+                navs:[{url:"/",name:"Home"}]
+            });
             return;
         }
 
         const response = await fetch(process.env.REACT_APP_SERVER_URL + 'users/auth?token=' + Cookie.get('token') + "&userId="+Cookie.get('userId'));
 
         if(response.status === 200)
-            this.setState({ buttons: <Button variant="success" style={btnStyle} onClick={this.logout}>logout</Button> });
+            this.setState({ buttons: <Button variant="success" style={btnStyle} onClick={this.logout}>logout</Button>,
+                navs:[{url:"/",name:"Home"},{url:"/groups",name:"Groups"},{url:"/questions",name:"Questions"},{url:"/exercises",name:"Exercises"}]});
         else {
             this.setState( {buttons: <div>
                     <Button variant="success" style={btnStyle} href="/login">Login</Button>
                     <Button variant="outline-success" style={btnStyle} href="/signup">Sign up</Button>
-                </div>});
+                </div>,
+                navs:[{url:"/",name:"Home"}]});
             //throw new Error(response.status);
         }
 
