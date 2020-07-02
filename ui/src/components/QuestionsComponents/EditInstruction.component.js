@@ -78,7 +78,7 @@ export default class EditInstruction extends Component {
         return (
             <Card className="mx-auto">
                 <Card.Body>
-                    <Card.Title>Instruction</Card.Title>
+                    <Card.Title>Question instruction</Card.Title>
                     <span >Use <span style={{color:'#2686ff'}}>@</span> to mention an input, and use <span style={{color:'#2686ff'}}>$</span> key to insert inline math. <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">(See MathJax basic)</a></span>
                     <hr></hr>
                         <div className={editorStyles.editor} onClick={this.focus}>

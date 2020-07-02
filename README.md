@@ -8,6 +8,11 @@ The aim of this project is to offer a solution for teachers and student to have 
 
 This project is using [Docker-Compose](https://docs.docker.com/compose/) it allows us to run multi-container Docker application. In this repository the backend, frontend and the database will run in different containers.
 
+First install docker installed on your machine: [see instruction](https://docs.docker.com/engine/install/)
+
+After install docker-compose: [see instruction](https://docs.docker.com/compose/install/)
+
+Then simply clone this repository, build and run it.
 ```
 git clone https://github.com/axel0070/online_exercises
 docker-compose up --build

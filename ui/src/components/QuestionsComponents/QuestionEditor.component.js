@@ -316,11 +316,11 @@ export default class CodeEditor extends React.Component {
                 <h3>Question : {this.state.name}</h3>
 
                 <div style={{marginTop:"20px",marginBottom:"50px"}}>
-                    {this.state.instructionHTML}
+                    <InputEditor SetInputsEditor={this.SetInputsEditor} ref={this.state.inputRef}/>
                 </div>
 
                 <div style={{marginTop:"20px",marginBottom:"50px"}}>
-                    <InputEditor SetInputsEditor={this.SetInputsEditor} ref={this.state.inputRef}/>
+                    {this.state.instructionHTML}
                 </div>
 
                 <Card style={{marginTop:"20px",marginBottom:"50px"}}>

@@ -74,7 +74,7 @@ export default class InputEditor extends Component {
         return (
             <Card className="mx-auto">
                 <Card.Body>
-                    <Card.Title>Function inputs</Card.Title>
+                    <Card.Title>Question inputs</Card.Title>
                     <Form onSubmit={this.onSubmit}>
 
                         <Form.Row>

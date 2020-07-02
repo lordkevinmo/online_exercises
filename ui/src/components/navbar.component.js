@@ -61,7 +61,7 @@ export default class Navigation extends Component {
                 window.location = '/';
             })
             .catch(err => {
-                /*alert("Error: " + err);*/ //Very strange beacause we considere it has an error but it is not...
+                /*alert("Error: " + err);*/ //Very strange because we consider it has an error but it is not...
                 Cookie.remove("token");
                 Cookie.remove("userId");
                 window.location = '/';
@@ -75,10 +75,9 @@ export default class Navigation extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/groups">Groups</Nav.Link>
-                        <Nav.Link href="/questions">Questions</Nav.Link>
-                        <Nav.Link href="/exercises">Exercises</Nav.Link>
+                        {this.state.navs.map((item,i) => {
+                           return <Nav.Link href={item.url} key={i}>{item.name}</Nav.Link>
+                        })}
                     </Nav>
                     {this.state.buttons}
                 </Navbar.Collapse>

@@ -78,6 +78,15 @@ export default class Groups extends Component {
         if(end)
             return;
 
+        if(this.state.invitationGroupId.length !== 24)
+        {
+            this.setState({
+                invitationGroupId: '',
+                isGroupIdInputDisable:false
+            });
+            return  alert("Invalid Token"); ;
+        }
+
         const group = {
             GroupId: this.state.invitationGroupId
         };
@@ -88,7 +97,7 @@ export default class Groups extends Component {
                 window.location = "/groups"
             })
             .catch(err => {
-                alert("Error: " + err);
+                alert("Token invalid or already submitted");
             })
     }
 
@@ -96,7 +105,7 @@ export default class Groups extends Component {
     {
         console.log(e.target.value);
         this.setState({
-            invitationGroupId:e.target.value
+            invitationGroupId:e.target.value.trim()
         })
     }
 

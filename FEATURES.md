@@ -12,6 +12,7 @@
 - [ ] Use capcha for login/sign up
 - [ ] Generate private key for JsonWebToken
 - [ ] During the first launch of the system, a default admin user is created
+- [ ] Using tools such as [React.Lazy](https://fr.reactjs.org/docs/code-splitting.html) to have dynamic loading component.
 
 #### Creator of a group
 - [x] They can accept/refuse user
@@ -34,7 +35,7 @@
 # Exercise
 An exercise is composed of one or many questions (different type possible)
 
-- [ ] They can define a timelimit
+- [ ] They can define a time limit
 - [ ] They can define a date limit (day/hours/mins/seconds)
 - [x] They can define name and description
 - [x] They can make the orders of questions randomly (default: true)
@@ -91,7 +92,7 @@ The creator can write instruction
 	- [x] Fix `store.completion is not a function` issue. Using [fixed-draft-js-mathjax-plugin] (https://github.com/axel0070/fixed-draft-js-mathjax-plugin)
 	- [ ] Fix readOnly ignored by draft-js-mathjax plugin
 	- [x] Own implementation or search/replace in ContentState
-	- [ ] Implement autocompletion in draft-js-mathjax-plugin for inputs.
+	- [ ] Implement auto-completion in draft-js-mathjax-plugin for inputs.
 
 - [ ] ~~The instructions are generated on the server side~~ The **inputs** and the **ContentState** are given to the client and **he** will generate the final text.
 
@@ -104,7 +105,7 @@ The creator can write instruction
 
 ### Scripts answer
 The creator will create a script to perform an action. 
-Then the user will have an intruction which explain that he has to write a script which do something particular.
+Then the user will have an instruction which explain that he has to write a script which do something particular.
 Finally the server will compare the output of the creator script and the user script for same input(s). 
 The code CAN be different but the output should be the same.
 
